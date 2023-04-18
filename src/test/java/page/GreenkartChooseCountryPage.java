@@ -42,6 +42,8 @@ public class GreenkartChooseCountryPage extends BaseTest {
     WebElement droppableElement;
     @FindBy(xpath = "//div[@class=('col-lg-12 text-center')]/div[1]/div[1]/div/a")
     WebElement link1;
+    @FindBy(xpath = "//div[@class='dropdown hover']")
+    WebElement hoverOverMe1st;
 
 
 
@@ -93,6 +95,7 @@ public class GreenkartChooseCountryPage extends BaseTest {
     }
 
     public void openNewTab() {
+
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.open()");
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -145,6 +148,12 @@ public class GreenkartChooseCountryPage extends BaseTest {
     public boolean invisibilityOfLink1(){
         //Boolean bool = new WebDriverWait(driver, 20).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class=('col-lg-12 text-center')]/div[1]/div[1]/div/a")));
         wdWait.until(ExpectedConditions.invisibilityOf(link1));
+        return link1.isDisplayed();
+    }
+
+    public boolean hoverOverLink1(){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hoverOverMe1st).build().perform();
         return link1.isDisplayed();
     }
 
