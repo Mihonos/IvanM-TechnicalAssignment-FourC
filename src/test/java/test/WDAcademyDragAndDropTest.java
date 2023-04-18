@@ -21,6 +21,9 @@ public class WDAcademyDragAndDropTest extends BaseTest {
     @Test
 
     public void WDAcademyDragAndDropTest() {
+        //greenkartChooseCountryPage.openNewTab();
+        //greenkartChooseCountryPage.scrollToActionsSection();
+        //greenkartChooseCountryPage.goBackWDHomePage();
         greenkartChooseCountryPage.openThirdTabDirectly();
         greenkartChooseCountryPage.dragAndDrop();
     }
